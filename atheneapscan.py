@@ -16,7 +16,6 @@ import struct
 import fcntl
 import athenea
 
-
 # Console colors
 W  = '\033[0m'  # white (normal)
 R  = '\033[31m' # red
@@ -28,7 +27,6 @@ C  = '\033[36m' # cyan
 GR = '\033[37m' # gray
 T  = '\033[93m' # tan
 END= '\033[0m'
-
 
 
 
@@ -322,7 +320,7 @@ def stop(signal, frame):
         os.system('service network-manager restart')
         raw_input(G+"[*] Press "+O+"[return]"+G+"to exit"+END)
         print('\n['+G+'*'+G+'] Gracefully exiting, thanks for using'+O+' Athenea AP Scanner'+G+' ... '+END)
-        os.system("python athenea.py")
+        os.system("sudo python athenea.py")
 def main():
     if os.geteuid():
         sys.exit('['+R+'-'+W+'] Please run as root')
